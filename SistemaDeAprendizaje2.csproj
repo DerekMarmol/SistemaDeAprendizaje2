@@ -98,23 +98,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdministrarMateriales.cs">
+    <Compile Include="FormCatalogoCursos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdministrarMateriales.Designer.cs">
-      <DependentUpon>AdministrarMateriales.cs</DependentUpon>
+    <Compile Include="FormCatalogoCursos.Designer.cs">
+      <DependentUpon>FormCatalogoCursos.cs</DependentUpon>
     </Compile>
-    <Compile Include="CentroDeNotificaciones.cs">
+    <Compile Include="FormCursosRegistrados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CentroDeNotificaciones.Designer.cs">
-      <DependentUpon>CentroDeNotificaciones.cs</DependentUpon>
+    <Compile Include="FormCursosRegistrados.Designer.cs">
+      <DependentUpon>FormCursosRegistrados.cs</DependentUpon>
     </Compile>
-    <Compile Include="EvaluacionYPruebas.cs">
+    <Compile Include="FormEditarPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EvaluacionYPruebas.Designer.cs">
-      <DependentUpon>EvaluacionYPruebas.cs</DependentUpon>
+    <Compile Include="FormEditarPerfil.Designer.cs">
+      <DependentUpon>FormEditarPerfil.cs</DependentUpon>
     </Compile>
     <Compile Include="FormRegistro.cs">
       <SubType>Form</SubType>
@@ -136,14 +136,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AdministrarMateriales.resx">
-      <DependentUpon>AdministrarMateriales.cs</DependentUpon>
+    <EmbeddedResource Include="FormCatalogoCursos.resx">
+      <DependentUpon>FormCatalogoCursos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CentroDeNotificaciones.resx">
-      <DependentUpon>CentroDeNotificaciones.cs</DependentUpon>
+    <EmbeddedResource Include="FormEditarPerfil.resx">
+      <DependentUpon>FormEditarPerfil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EvaluacionYPruebas.resx">
-      <DependentUpon>EvaluacionYPruebas.cs</DependentUpon>
+    <EmbeddedResource Include="FormInicio.resx">
+      <DependentUpon>FormInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistro.resx">
       <DependentUpon>FormRegistro.cs</DependentUpon>
