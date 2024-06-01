@@ -96,6 +96,7 @@
             this.btnGuardar.TabIndex = 20;
             this.btnGuardar.Text = "Guardar Curso";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // dateFechaFin
             // 

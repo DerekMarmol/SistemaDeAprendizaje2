@@ -13,14 +13,43 @@ namespace SistemaDeAprendizaje2
 {
     public partial class FormVerMateriales : Form
     {
-        private int cursoID;
         private string connectionString = "Server=bofn3obbnejxfyoheir1-mysql.services.clever-cloud.com;Database=bofn3obbnejxfyoheir1;User=uh4dunztmvwgo47z;Password=uyjiJZkG5JqLtaELmvku;Port=3306;SslMode=Preferred;";
+
+        private string nombre;
+        private string apellido;
+        private string correo;
+        private int cursoID;
+        private bool esAdmin;
+        private int usuarioID;
+        private object cursoID1;
+
+        public FormVerMateriales(string nombre, string apellido, string correo, int cursoID, bool esAdmin, int usuarioID)
+        {
+            InitializeComponent();
+            CargarMateriales();
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.correo = correo;
+            this.cursoID = cursoID;
+            this.esAdmin = esAdmin;
+            this.usuarioID = usuarioID;
+        }
 
         public FormVerMateriales(int cursoID)
         {
-            InitializeComponent();
             this.cursoID = cursoID;
+        }
+
+        public FormVerMateriales(string nombre, string apellido, string correo, object cursoID1, bool esAdmin, int usuarioID)
+        {
+            InitializeComponent();
             CargarMateriales();
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.correo = correo;
+            this.cursoID1 = cursoID1;
+            this.esAdmin = esAdmin;
+            this.usuarioID = usuarioID;
         }
 
         private void CargarMateriales()
@@ -55,6 +84,25 @@ namespace SistemaDeAprendizaje2
             {
                 MessageBox.Show("Por favor, selecciona un material para descargar.");
             }
+        }
+
+        private void btnCatalogoCurso_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Hide();
+                FormCatalogoCursos formCatalogo = new FormCatalogoCursos(esAdmin, usuarioID);
+                formCatalogo.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private void FormVerMateriales_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

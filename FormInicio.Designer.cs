@@ -42,6 +42,7 @@
             this.btnCursosRegistrados = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBoxImage = new System.Windows.Forms.PictureBox();
+            this.btnCentroDeNotificaciones = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             this.SuspendLayout();
@@ -137,6 +138,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnCentroDeNotificaciones);
             this.panel1.Controls.Add(this.btnCursosRegistrados);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(17, 12);
@@ -172,6 +174,16 @@
             this.pictureBoxImage.Size = new System.Drawing.Size(145, 139);
             this.pictureBoxImage.TabIndex = 11;
             this.pictureBoxImage.TabStop = false;
+            // 
+            // btnCentroDeNotificaciones
+            // 
+            this.btnCentroDeNotificaciones.Location = new System.Drawing.Point(14, 101);
+            this.btnCentroDeNotificaciones.Name = "btnCentroDeNotificaciones";
+            this.btnCentroDeNotificaciones.Size = new System.Drawing.Size(149, 23);
+            this.btnCentroDeNotificaciones.TabIndex = 13;
+            this.btnCentroDeNotificaciones.Text = "Centro De Notificaciones";
+            this.btnCentroDeNotificaciones.UseVisualStyleBackColor = true;
+            this.btnCentroDeNotificaciones.Click += new System.EventHandler(this.btnCentroDeNotificaciones_Click);
             // 
             // FormInicio
             // 
@@ -215,5 +227,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBoxImage;
         private System.Windows.Forms.Button btnCursosRegistrados;
+        private System.Windows.Forms.Button btnCentroDeNotificaciones;
     }
 }

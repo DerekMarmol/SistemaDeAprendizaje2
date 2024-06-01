@@ -52,6 +52,7 @@
             this.btnVerMateriales.TabIndex = 18;
             this.btnVerMateriales.Text = "Ver Materiales";
             this.btnVerMateriales.UseVisualStyleBackColor = true;
+            this.btnVerMateriales.Click += new System.EventHandler(this.btnVerMateriales_Click);
             // 
             // btnAdministrarMateriales
             // 

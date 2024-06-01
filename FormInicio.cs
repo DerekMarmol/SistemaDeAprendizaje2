@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using _10Notificaciones;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,7 +29,6 @@ namespace SistemaDeAprendizaje2
             InitializeComponent();
             this.esAdmin = esAdmin;
             this.usuarioID = usuarioID;
-
             SetPerfilNombre(nombre);
             SetPerfilApellido(apellido);
             SetPerfilCorreo(correo);
@@ -52,6 +52,7 @@ namespace SistemaDeAprendizaje2
         private void FormInicio_Load(object sender, EventArgs e)
         {
             CargarImagenPerfil();
+            btnCentroDeNotificaciones.Visible = esAdmin;
         }
 
         private void btnCambiarImagen_Click(object sender, EventArgs e)
@@ -202,6 +203,12 @@ namespace SistemaDeAprendizaje2
         internal void SetPerfilCorreo(object value)
         {
             throw new NotImplementedException();
+        }
+
+        private void btnCentroDeNotificaciones_Click(object sender, EventArgs e)
+        {
+            CentroDeNotificaciones centroDeNotificaciones = new CentroDeNotificaciones(nombre, apellido, correo, cursoID, esAdmin, usuarioID);
+            centroDeNotificaciones.Show();
         }
     }
 }

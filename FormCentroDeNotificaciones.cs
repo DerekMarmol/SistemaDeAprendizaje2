@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,26 +22,88 @@ namespace _10Notificaciones
         private string myAlias = "Proyecto Daniel, Derek y Andreina";
         private string[] myAdjuntos;
         private MailMessage mCorreo;
+        string connectionString = "Server=bofn3obbnejxfyoheir1-mysql.services.clever-cloud.com;Database=bofn3obbnejxfyoheir1;User=uh4dunztmvwgo47z;Password=uyjiJZkG5JqLtaELmvku;Port=3306;SslMode=Preferred;";
+        private string nombre;
+        private string apellido;
+        private string correo;
+        private int cursoID;
+        private bool esAdmin;
+        private int usuarioID;
 
-        public CentroDeNotificaciones()
+        public CentroDeNotificaciones(string nombre, string apellido, string correo, int cursoID, bool esAdmin, int usuarioID)
         {
             InitializeComponent();
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.correo = correo;
+            this.cursoID = cursoID;
+            this.esAdmin = esAdmin;
+            this.usuarioID = usuarioID;
+            CargarUsuarios();
         }
+
+        private void CargarUsuarios()
+        {
+            // Cargar usuarios en el ComboBox
+            List<string> usuarios = new List<string>();
+
+            using (MySqlConnection connection = new MySqlConnection("Server=bofn3obbnejxfyoheir1-mysql.services.clever-cloud.com;Database=bofn3obbnejxfyoheir1;User=uh4dunztmvwgo47z;Password=uyjiJZkG5JqLtaELmvku;Port=3306;SslMode=Preferred;"))
+            {
+                string query = "SELECT Email, Nombre FROM Usuarios";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                string email = reader.GetString("Email");
+                                string nombre = reader.GetString("Nombre");
+                                usuarios.Add($"{nombre} ({email})");
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al cargar los usuarios: " + ex.Message);
+                    }
+                    finally
+                    {
+                        if (connection.State == ConnectionState.Open)
+                            connection.Close();
+                    }
+                }
+            }
+
+            cmbEmailTo.DataSource = usuarios;
+        }
+
         private void CrearCuerpoCorreo()
         {
             mCorreo = new MailMessage();
             mCorreo.From = new MailAddress(myEmail, myAlias, System.Text.Encoding.UTF8);
-            mCorreo.To.Add(txtEmailFrom.Text.Trim());
+
+            // Extraer el correo electrónico del ComboBox
+            string selectedUser = cmbEmailTo.SelectedItem.ToString();
+            string email = selectedUser.Substring(selectedUser.IndexOf('(') + 1).TrimEnd(')');
+
+            mCorreo.To.Add(email);
             mCorreo.Subject = txtSubject.Text.Trim();
             mCorreo.Body = txtMessage.Text.Trim();
             mCorreo.IsBodyHtml = true;
             mCorreo.Priority = MailPriority.High;
 
-            for (int i = 0; i < myAdjuntos.Length; i++)
+            if (myAdjuntos != null)
             {
-                mCorreo.Attachments.Add(new Attachment(myAdjuntos[i]));
+                for (int i = 0; i < myAdjuntos.Length; i++)
+                {
+                    mCorreo.Attachments.Add(new Attachment(myAdjuntos[i]));
+                }
             }
         }
+
         private void Enviar()
         {
             try
@@ -61,17 +124,16 @@ namespace _10Notificaciones
             }
             catch (Exception e)
             {
-
                 MessageBox.Show(e.Message);
             }
-
         }
+
         private void AdjuntarArchivos()
         {
             var names = "";
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Multiselect = true;
-            ofd.Title = "Adjutar Archivos al Correo";
+            ofd.Title = "Adjuntar Archivos al Correo";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 myAdjuntos = ofd.FileNames;
@@ -83,35 +145,31 @@ namespace _10Notificaciones
             }
             lblFiles.Text = names;
         }
-        private void Form1_Load(object sender, EventArgs e)
+
+        private void txtSubject_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void btnFiles_Click_1(object sender, EventArgs e)
-        {
-            AdjuntarArchivos();
-        }
-
-        private void btnSend_Click_1(object sender, EventArgs e)
+        private void btnSend_Click(object sender, EventArgs e)
         {
             CrearCuerpoCorreo();
             Enviar();
         }
 
-        private void txtEmailFrom_TextChanged(object sender, EventArgs e)
+        private void btnFiles_Click(object sender, EventArgs e)
+        {
+            AdjuntarArchivos();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void txtMessage_TextChanged(object sender, EventArgs e)
+        private void CentroDeNotificaciones_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void txtSubject_TextChanged(object sender, EventArgs e)
-        {
-
+            CargarUsuarios();
         }
     }
 }

@@ -32,7 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.txtSubject = new System.Windows.Forms.TextBox();
-            this.txtEmailFrom = new System.Windows.Forms.TextBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.btnFiles = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,15 +39,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmbEmailTo = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel1.Controls.Add(this.cmbEmailTo);
             this.panel1.Controls.Add(this.txtMessage);
             this.panel1.Controls.Add(this.txtSubject);
-            this.panel1.Controls.Add(this.txtEmailFrom);
             this.panel1.Controls.Add(this.btnSend);
             this.panel1.Controls.Add(this.btnFiles);
             this.panel1.Controls.Add(this.label5);
@@ -61,6 +61,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 450);
             this.panel1.TabIndex = 11;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // txtMessage
             // 
@@ -78,13 +79,6 @@
             this.txtSubject.TabIndex = 18;
             this.txtSubject.TextChanged += new System.EventHandler(this.txtSubject_TextChanged);
             // 
-            // txtEmailFrom
-            // 
-            this.txtEmailFrom.Location = new System.Drawing.Point(237, 64);
-            this.txtEmailFrom.Name = "txtEmailFrom";
-            this.txtEmailFrom.Size = new System.Drawing.Size(342, 20);
-            this.txtEmailFrom.TabIndex = 17;
-            // 
             // btnSend
             // 
             this.btnSend.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -96,6 +90,7 @@
             this.btnSend.TabIndex = 16;
             this.btnSend.Text = "Enviar";
             this.btnSend.UseVisualStyleBackColor = false;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // btnFiles
             // 
@@ -108,6 +103,7 @@
             this.btnFiles.TabIndex = 15;
             this.btnFiles.Text = "adjuntos";
             this.btnFiles.UseVisualStyleBackColor = false;
+            this.btnFiles.Click += new System.EventHandler(this.btnFiles_Click);
             // 
             // label5
             // 
@@ -159,6 +155,14 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Enviar:";
             // 
+            // cmbEmailTo
+            // 
+            this.cmbEmailTo.FormattingEnabled = true;
+            this.cmbEmailTo.Location = new System.Drawing.Point(237, 64);
+            this.cmbEmailTo.Name = "cmbEmailTo";
+            this.cmbEmailTo.Size = new System.Drawing.Size(342, 21);
+            this.cmbEmailTo.TabIndex = 20;
+            // 
             // CentroDeNotificaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,6 +172,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CentroDeNotificaciones";
             this.Text = "FormCentroDeNotificaciones";
+            this.Load += new System.EventHandler(this.CentroDeNotificaciones_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -179,7 +184,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.TextBox txtSubject;
-        private System.Windows.Forms.TextBox txtEmailFrom;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Button btnFiles;
         private System.Windows.Forms.Label label5;
@@ -187,5 +191,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbEmailTo;
     }
 }

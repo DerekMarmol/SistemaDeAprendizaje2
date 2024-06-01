@@ -21,6 +21,7 @@ namespace SistemaDeAprendizaje2
         public string nombre { get; private set; }
         public string apellido { get; private set; }
         public string correo { get; private set; }
+        public object cursoID { get; private set; }
 
         public FormCatalogoCursos(bool esAdmin, int usuarioID)
         {
@@ -289,6 +290,12 @@ namespace SistemaDeAprendizaje2
             {
                 MessageBox.Show("Por favor, seleccione un curso.");
             }
+        }
+
+        private void btnVerMateriales_Click(object sender, EventArgs e)
+        {
+            FormVerMateriales formVerMateriales = new FormVerMateriales(nombre, apellido, correo, cursoID, esAdmin, usuarioID);
+            formVerMateriales.Show();
         }
     }
 }

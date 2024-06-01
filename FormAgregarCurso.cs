@@ -32,7 +32,7 @@ namespace SistemaDeAprendizaje2
             dateFechaFin.Value = DateTime.Now;
         }
 
-        private void btnGuardar_Click_1(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
             NombreCurso = txtNombreCurso.Text;
             string descripcion = txtDescripcion.Text;
@@ -61,12 +61,5 @@ namespace SistemaDeAprendizaje2
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
-
-        private void FormAgregarCurso_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
     }
 }
