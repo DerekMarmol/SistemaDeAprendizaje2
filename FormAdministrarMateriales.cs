@@ -9,7 +9,7 @@ using SistemaDeAprendizaje2;
 
 namespace SistemaDeAprendizaje
 {
-    public partial class FormAdministrarMateriales : Form
+    public partial class FormAdministrarMateriales : System.Windows.Forms.Form
     {
         private int cursoID;
         private string connectionString = "Server=bofn3obbnejxfyoheir1-mysql.services.clever-cloud.com;Database=bofn3obbnejxfyoheir1;User=uh4dunztmvwgo47z;Password=uyjiJZkG5JqLtaELmvku;Port=3306;SslMode=Preferred;";

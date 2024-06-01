@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace SistemaDeAprendizaje2
 {
-    public partial class FormEditarPerfil : Form
+    public partial class FormEditarPerfil : System.Windows.Forms.Form
     {
         public string CorreoElectronico { get; private set; }
         public string Nombre { get; set; }

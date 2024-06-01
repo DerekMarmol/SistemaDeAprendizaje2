@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace SistemaDeAprendizaje2
 {
-    public partial class FormAgregarCurso : Form
+    public partial class FormAgregarCurso : System.Windows.Forms.Form
     {
         string connectionString = "Server=bofn3obbnejxfyoheir1-mysql.services.clever-cloud.com;Database=bofn3obbnejxfyoheir1;User=uh4dunztmvwgo47z;Password=uyjiJZkG5JqLtaELmvku;Port=3306;SslMode=Preferred;";
 

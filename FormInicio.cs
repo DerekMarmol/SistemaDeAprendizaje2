@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace SistemaDeAprendizaje2
 {
-    public partial class FormInicio : Form
+    public partial class FormInicio : System.Windows.Forms.Form
     {
         string connectionString = "Server=bofn3obbnejxfyoheir1-mysql.services.clever-cloud.com;Database=bofn3obbnejxfyoheir1;User=uh4dunztmvwgo47z;Password=uyjiJZkG5JqLtaELmvku;Port=3306;SslMode=Preferred;";
         private bool esAdmin;
@@ -209,6 +209,18 @@ namespace SistemaDeAprendizaje2
         {
             CentroDeNotificaciones centroDeNotificaciones = new CentroDeNotificaciones(nombre, apellido, correo, cursoID, esAdmin, usuarioID);
             centroDeNotificaciones.Show();
+        }
+
+        private void btnCalificaciones_Click(object sender, EventArgs e)
+        {
+                CalifYRetro formCalificaciones = new CalifYRetro(nombre, apellido, correo, cursoID, esAdmin, usuarioID);
+                formCalificaciones.Show();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            FormReportes formReportes = new FormReportes(nombre, apellido, correo, cursoID, esAdmin, usuarioID);
+            formReportes.Show();
         }
     }
 }

@@ -7,7 +7,7 @@ using BCrypt.Net;
 
 namespace SistemaDeAprendizaje2
 {
-    public partial class FormRegistro : Form
+    public partial class FormRegistro : System.Windows.Forms.Form
     {
         public FormRegistro()
         {

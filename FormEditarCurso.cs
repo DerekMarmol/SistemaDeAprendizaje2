@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace SistemaDeAprendizaje2
 {
-    public partial class FormEditarCurso : Form
+    public partial class FormEditarCurso : System.Windows.Forms.Form
     {
         private int cursoID;
         private string connectionString;
