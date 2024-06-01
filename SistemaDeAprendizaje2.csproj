@@ -101,6 +101,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormCatalogoCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCatalogoCursos.Designer.cs">
+      <DependentUpon>FormCatalogoCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCursosRegistrados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCursosRegistrados.Designer.cs">
+      <DependentUpon>FormCursosRegistrados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditarPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarPerfil.Designer.cs">
+      <DependentUpon>FormEditarPerfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +133,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCatalogoCursos.resx">
+      <DependentUpon>FormCatalogoCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarPerfil.resx">
+      <DependentUpon>FormEditarPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInicio.resx">
+      <DependentUpon>FormInicio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormRegistro.resx">
       <DependentUpon>FormRegistro.cs</DependentUpon>
     </EmbeddedResource>
