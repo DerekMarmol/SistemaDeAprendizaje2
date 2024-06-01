@@ -98,6 +98,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministrarMateriales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministrarMateriales.Designer.cs">
+      <DependentUpon>AdministrarMateriales.cs</DependentUpon>
+    </Compile>
     <Compile Include="CentroDeNotificaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdministrarMateriales.resx">
+      <DependentUpon>AdministrarMateriales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CentroDeNotificaciones.resx">
       <DependentUpon>CentroDeNotificaciones.cs</DependentUpon>
     </EmbeddedResource>
