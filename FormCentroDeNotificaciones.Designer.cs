@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCentroDeNotificaciones));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CentroDeNotificaciones));
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.txtSubject = new System.Windows.Forms.TextBox();
@@ -76,6 +76,7 @@
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.Size = new System.Drawing.Size(342, 20);
             this.txtSubject.TabIndex = 18;
+            this.txtSubject.TextChanged += new System.EventHandler(this.txtSubject_TextChanged);
             // 
             // txtEmailFrom
             // 
@@ -158,14 +159,14 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Enviar:";
             // 
-            // FormCentroDeNotificaciones
+            // CentroDeNotificaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FormCentroDeNotificaciones";
+            this.Name = "CentroDeNotificaciones";
             this.Text = "FormCentroDeNotificaciones";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

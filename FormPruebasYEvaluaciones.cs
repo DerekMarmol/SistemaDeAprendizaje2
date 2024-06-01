@@ -289,4 +289,10 @@ namespace SistemaDeAprendizaje
             public string RespuestaCorrecta { get; set; }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
       

@@ -108,5 +108,10 @@ namespace _10Notificaciones
         {
 
         }
+
+        private void txtSubject_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

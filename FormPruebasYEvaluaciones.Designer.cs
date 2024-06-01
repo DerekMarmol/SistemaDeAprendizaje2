@@ -40,6 +40,9 @@
             this.lblPregunta = new System.Windows.Forms.Label();
             this.lblResultado = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEnviar = new System.Windows.Forms.Button();
+            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.txtRespuesta = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -51,9 +54,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtRespuesta = new System.Windows.Forms.TextBox();
-            this.btnSiguiente = new System.Windows.Forms.Button();
-            this.btnEnviar = new System.Windows.Forms.Button();
             this.pnlAdmin.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -175,6 +175,39 @@
             this.panel1.Size = new System.Drawing.Size(800, 450);
             this.panel1.TabIndex = 22;
             // 
+            // btnEnviar
+            // 
+            this.btnEnviar.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnEnviar.FlatAppearance.BorderSize = 0;
+            this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviar.Location = new System.Drawing.Point(358, 224);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(113, 23);
+            this.btnEnviar.TabIndex = 18;
+            this.btnEnviar.Text = "Enviar Respuesta";
+            this.btnEnviar.UseVisualStyleBackColor = false;
+            // 
+            // btnSiguiente
+            // 
+            this.btnSiguiente.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnSiguiente.FlatAppearance.BorderSize = 0;
+            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSiguiente.Location = new System.Drawing.Point(358, 273);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(113, 23);
+            this.btnSiguiente.TabIndex = 17;
+            this.btnSiguiente.Text = "Siguiente Pregunta";
+            this.btnSiguiente.UseVisualStyleBackColor = false;
+            // 
+            // txtRespuesta
+            // 
+            this.txtRespuesta.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtRespuesta.Location = new System.Drawing.Point(180, 145);
+            this.txtRespuesta.Name = "txtRespuesta";
+            this.txtRespuesta.Size = new System.Drawing.Size(461, 20);
+            this.txtRespuesta.TabIndex = 16;
+            this.txtRespuesta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -223,6 +256,7 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "Agregar Pregunta";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
             // 
@@ -273,40 +307,7 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Resultado";
             // 
-            // txtRespuesta
-            // 
-            this.txtRespuesta.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtRespuesta.Location = new System.Drawing.Point(180, 145);
-            this.txtRespuesta.Name = "txtRespuesta";
-            this.txtRespuesta.Size = new System.Drawing.Size(461, 20);
-            this.txtRespuesta.TabIndex = 16;
-            this.txtRespuesta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnSiguiente
-            // 
-            this.btnSiguiente.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnSiguiente.FlatAppearance.BorderSize = 0;
-            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSiguiente.Location = new System.Drawing.Point(358, 273);
-            this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(113, 23);
-            this.btnSiguiente.TabIndex = 17;
-            this.btnSiguiente.Text = "Siguiente Pregunta";
-            this.btnSiguiente.UseVisualStyleBackColor = false;
-            // 
-            // btnEnviar
-            // 
-            this.btnEnviar.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnEnviar.FlatAppearance.BorderSize = 0;
-            this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnviar.Location = new System.Drawing.Point(358, 224);
-            this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(113, 23);
-            this.btnEnviar.TabIndex = 18;
-            this.btnEnviar.Text = "Enviar Respuesta";
-            this.btnEnviar.UseVisualStyleBackColor = false;
-            // 
-            // FormPruebasYEvaluaciones
+            // EvaluacionYPruebas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -318,7 +319,7 @@
             this.Controls.Add(this.pnlAdmin);
             this.Controls.Add(this.lblPregunta);
             this.Controls.Add(this.lblResultado);
-            this.Name = "FormPruebasYEvaluaciones";
+            this.Name = "EvaluacionYPruebas";
             this.Text = "FormPruebasYEvaluaciones";
             this.pnlAdmin.ResumeLayout(false);
             this.pnlAdmin.PerformLayout();
