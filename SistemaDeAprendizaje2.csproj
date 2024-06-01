@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
-      <HintPath>packages\BCrypt.Net-Next.4.0.3\lib\net472\BCrypt.Net-Next.dll</HintPath>
-    </Reference>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>packages\BouncyCastle.Cryptography.2.2.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
@@ -101,6 +98,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CentroDeNotificaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CentroDeNotificaciones.Designer.cs">
+      <DependentUpon>CentroDeNotificaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluacionYPruebas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluacionYPruebas.Designer.cs">
+      <DependentUpon>EvaluacionYPruebas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,10 +122,25 @@
     <Compile Include="FormInicio.Designer.cs">
       <DependentUpon>FormInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="ForosYComunicaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForosYComunicaciones.Designer.cs">
+      <DependentUpon>ForosYComunicaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CentroDeNotificaciones.resx">
+      <DependentUpon>CentroDeNotificaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EvaluacionYPruebas.resx">
+      <DependentUpon>EvaluacionYPruebas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormRegistro.resx">
       <DependentUpon>FormRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForosYComunicaciones.resx">
+      <DependentUpon>ForosYComunicaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
