@@ -39,10 +39,9 @@
             this.lblInformacion = new System.Windows.Forms.Label();
             this.btnCambiarImagen = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnVerCursosRegistrados = new System.Windows.Forms.Button();
+            this.btnCursosRegistrados = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBoxImage = new System.Windows.Forms.PictureBox();
-            this.btnCursosRegistrados = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             this.SuspendLayout();
@@ -139,22 +138,21 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btnCursosRegistrados);
-            this.panel1.Controls.Add(this.btnVerCursosRegistrados);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(17, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(185, 426);
             this.panel1.TabIndex = 12;
             // 
-            // btnVerCursosRegistrados
+            // btnCursosRegistrados
             // 
-            this.btnVerCursosRegistrados.Location = new System.Drawing.Point(26, 99);
-            this.btnVerCursosRegistrados.Name = "btnVerCursosRegistrados";
-            this.btnVerCursosRegistrados.Size = new System.Drawing.Size(121, 23);
-            this.btnVerCursosRegistrados.TabIndex = 11;
-            this.btnVerCursosRegistrados.Text = "Cursos Registrados";
-            this.btnVerCursosRegistrados.UseVisualStyleBackColor = true;
-            this.btnVerCursosRegistrados.Click += new System.EventHandler(this.btnVerCursosRegistrados_Click);
+            this.btnCursosRegistrados.Location = new System.Drawing.Point(26, 61);
+            this.btnCursosRegistrados.Name = "btnCursosRegistrados";
+            this.btnCursosRegistrados.Size = new System.Drawing.Size(121, 23);
+            this.btnCursosRegistrados.TabIndex = 12;
+            this.btnCursosRegistrados.Text = "Cursos Registrados";
+            this.btnCursosRegistrados.UseVisualStyleBackColor = true;
+            this.btnCursosRegistrados.Click += new System.EventHandler(this.btnCursosRegistrados_Click);
             // 
             // button1
             // 
@@ -174,16 +172,6 @@
             this.pictureBoxImage.Size = new System.Drawing.Size(145, 139);
             this.pictureBoxImage.TabIndex = 11;
             this.pictureBoxImage.TabStop = false;
-            // 
-            // btnCursosRegistrados
-            // 
-            this.btnCursosRegistrados.Location = new System.Drawing.Point(26, 61);
-            this.btnCursosRegistrados.Name = "btnCursosRegistrados";
-            this.btnCursosRegistrados.Size = new System.Drawing.Size(121, 23);
-            this.btnCursosRegistrados.TabIndex = 12;
-            this.btnCursosRegistrados.Text = "Cursos Registrados";
-            this.btnCursosRegistrados.UseVisualStyleBackColor = true;
-            this.btnCursosRegistrados.Click += new System.EventHandler(this.btnCursosRegistrados_Click);
             // 
             // FormInicio
             // 
@@ -224,7 +212,6 @@
         private System.Windows.Forms.Label lblInformacion;
         private System.Windows.Forms.Button btnCambiarImagen;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnVerCursosRegistrados;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBoxImage;
         private System.Windows.Forms.Button btnCursosRegistrados;

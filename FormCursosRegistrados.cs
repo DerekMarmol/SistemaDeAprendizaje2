@@ -24,16 +24,6 @@ namespace SistemaDeAprendizaje2
             this.usuarioID = usuarioID;
         }
 
-
-        public FormCursosRegistrados()
-        {
-        }
-
-        private void FormCursosRegistrados_Load(object sender, EventArgs e)
-        {
-            CargarCursosRegistradosEnDataGridView();
-        }
-
         private void CargarCursosRegistradosEnDataGridView()
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -112,7 +102,22 @@ namespace SistemaDeAprendizaje2
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void FormCursosRegistrados_Load_1(object sender, EventArgs e)
+        {
+            CargarCursosRegistradosEnDataGridView();
+        }
+
+        private void btnVerMateriales_Click_1(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow != null)
+            {
+                int cursoID = Convert.ToInt32(dataGridView1.CurrentRow.Cells["CursoID"].Value);
+                FormVerMateriales formVerMateriales = new FormVerMateriales(cursoID);
+                formVerMateriales.ShowDialog();
+            }
+        }
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
@@ -127,16 +132,6 @@ namespace SistemaDeAprendizaje2
             else
             {
                 MessageBox.Show("Por favor, selecciona un curso para eliminar.");
-            }
-        }
-
-        private void btnVerMateriales_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.CurrentRow != null)
-            {
-                int cursoID = Convert.ToInt32(dataGridView1.CurrentRow.Cells["CursoID"].Value);
-                FormVerMateriales formVerMateriales = new FormVerMateriales(cursoID);
-                formVerMateriales.ShowDialog();
             }
         }
     }

@@ -40,20 +40,20 @@
             this.lblPregunta = new System.Windows.Forms.Label();
             this.lblResultado = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txtRespuestaNueva = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtPreguntaNueva = new System.Windows.Forms.TextBox();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.txtRespuesta = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.btnCulminar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblCuestionar = new System.Windows.Forms.Label();
+            this.lblResult = new System.Windows.Forms.Label();
             this.pnlAdmin.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -110,10 +110,10 @@
             // 
             // txtNuevaRespuesta
             // 
-            this.txtNuevaRespuesta.Location = new System.Drawing.Point(3, 56);
+            this.txtNuevaRespuesta.Location = new System.Drawing.Point(0, 0);
             this.txtNuevaRespuesta.Name = "txtNuevaRespuesta";
-            this.txtNuevaRespuesta.Size = new System.Drawing.Size(635, 20);
-            this.txtNuevaRespuesta.TabIndex = 3;
+            this.txtNuevaRespuesta.Size = new System.Drawing.Size(100, 20);
+            this.txtNuevaRespuesta.TabIndex = 5;
             // 
             // label1
             // 
@@ -160,93 +160,40 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.btnEnviar);
             this.panel1.Controls.Add(this.btnSiguiente);
             this.panel1.Controls.Add(this.txtRespuesta);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.lblStatus);
+            this.panel1.Controls.Add(this.btnCulminar);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.lblCuestionar);
+            this.panel1.Controls.Add(this.lblResult);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 450);
             this.panel1.TabIndex = 22;
-            // 
-            // btnEnviar
-            // 
-            this.btnEnviar.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnEnviar.FlatAppearance.BorderSize = 0;
-            this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnviar.Location = new System.Drawing.Point(358, 224);
-            this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(113, 23);
-            this.btnEnviar.TabIndex = 18;
-            this.btnEnviar.Text = "Enviar Respuesta";
-            this.btnEnviar.UseVisualStyleBackColor = false;
-            // 
-            // btnSiguiente
-            // 
-            this.btnSiguiente.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnSiguiente.FlatAppearance.BorderSize = 0;
-            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSiguiente.Location = new System.Drawing.Point(358, 273);
-            this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(113, 23);
-            this.btnSiguiente.TabIndex = 17;
-            this.btnSiguiente.Text = "Siguiente Pregunta";
-            this.btnSiguiente.UseVisualStyleBackColor = false;
-            // 
-            // txtRespuesta
-            // 
-            this.txtRespuesta.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtRespuesta.Location = new System.Drawing.Point(180, 145);
-            this.txtRespuesta.Name = "txtRespuesta";
-            this.txtRespuesta.Size = new System.Drawing.Size(461, 20);
-            this.txtRespuesta.TabIndex = 16;
-            this.txtRespuesta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(406, 299);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 13);
-            this.label2.TabIndex = 15;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(349, 321);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Terminar Evaluación";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(4, 202);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 245);
-            this.panel2.TabIndex = 12;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.txtRespuestaNueva);
             this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.textBox1);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.textBox2);
-            this.panel4.Location = new System.Drawing.Point(100, 12);
+            this.panel4.Controls.Add(this.txtPreguntaNueva);
+            this.panel4.Location = new System.Drawing.Point(94, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(643, 103);
-            this.panel4.TabIndex = 11;
+            this.panel4.Size = new System.Drawing.Size(643, 108);
+            this.panel4.TabIndex = 19;
+            // 
+            // txtRespuestaNueva
+            // 
+            this.txtRespuestaNueva.Location = new System.Drawing.Point(4, 57);
+            this.txtRespuestaNueva.Name = "txtRespuestaNueva";
+            this.txtRespuestaNueva.Size = new System.Drawing.Size(634, 20);
+            this.txtRespuestaNueva.TabIndex = 5;
             // 
             // button2
             // 
@@ -256,14 +203,7 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "Agregar Pregunta";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(3, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(635, 20);
-            this.textBox1.TabIndex = 3;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // label3
             // 
@@ -283,29 +223,95 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Nueva Pregunta";
             // 
-            // textBox2
+            // txtPreguntaNueva
             // 
-            this.textBox2.Location = new System.Drawing.Point(3, 18);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(635, 20);
-            this.textBox2.TabIndex = 0;
+            this.txtPreguntaNueva.Location = new System.Drawing.Point(3, 18);
+            this.txtPreguntaNueva.Name = "txtPreguntaNueva";
+            this.txtPreguntaNueva.Size = new System.Drawing.Size(635, 20);
+            this.txtPreguntaNueva.TabIndex = 0;
             // 
-            // label5
+            // btnEnviar
             // 
-            this.label5.Location = new System.Drawing.Point(346, 118);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 24);
-            this.label5.TabIndex = 10;
+            this.btnEnviar.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnEnviar.FlatAppearance.BorderSize = 0;
+            this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviar.Location = new System.Drawing.Point(358, 224);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(113, 23);
+            this.btnEnviar.TabIndex = 18;
+            this.btnEnviar.Text = "Enviar Respuesta";
+            this.btnEnviar.UseVisualStyleBackColor = false;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click_1);
             // 
-            // label6
+            // btnSiguiente
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label6.Location = new System.Drawing.Point(12, 129);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Resultado";
+            this.btnSiguiente.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnSiguiente.FlatAppearance.BorderSize = 0;
+            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSiguiente.Location = new System.Drawing.Point(358, 273);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(113, 23);
+            this.btnSiguiente.TabIndex = 17;
+            this.btnSiguiente.Text = "Siguiente Pregunta";
+            this.btnSiguiente.UseVisualStyleBackColor = false;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click_1);
+            // 
+            // txtRespuesta
+            // 
+            this.txtRespuesta.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtRespuesta.Location = new System.Drawing.Point(180, 145);
+            this.txtRespuesta.Name = "txtRespuesta";
+            this.txtRespuesta.Size = new System.Drawing.Size(461, 20);
+            this.txtRespuesta.TabIndex = 16;
+            this.txtRespuesta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(406, 299);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(0, 13);
+            this.lblStatus.TabIndex = 15;
+            // 
+            // btnCulminar
+            // 
+            this.btnCulminar.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnCulminar.FlatAppearance.BorderColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnCulminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCulminar.Location = new System.Drawing.Point(349, 321);
+            this.btnCulminar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCulminar.Name = "btnCulminar";
+            this.btnCulminar.Size = new System.Drawing.Size(130, 23);
+            this.btnCulminar.TabIndex = 14;
+            this.btnCulminar.Text = "Terminar Evaluación";
+            this.btnCulminar.UseVisualStyleBackColor = false;
+            this.btnCulminar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(4, 202);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 245);
+            this.panel2.TabIndex = 12;
+            // 
+            // lblCuestionar
+            // 
+            this.lblCuestionar.Location = new System.Drawing.Point(346, 118);
+            this.lblCuestionar.Name = "lblCuestionar";
+            this.lblCuestionar.Size = new System.Drawing.Size(125, 24);
+            this.lblCuestionar.TabIndex = 10;
+            this.lblCuestionar.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // lblResult
+            // 
+            this.lblResult.AutoSize = true;
+            this.lblResult.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.lblResult.Location = new System.Drawing.Point(12, 129);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(55, 13);
+            this.lblResult.TabIndex = 6;
+            this.lblResult.Text = "Resultado";
+            this.lblResult.Click += new System.EventHandler(this.label6_Click);
             // 
             // EvaluacionYPruebas
             // 
@@ -349,16 +355,16 @@
         private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.Button btnSiguiente;
         private System.Windows.Forms.TextBox txtRespuesta;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Button btnCulminar;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblCuestionar;
+        private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtPreguntaNueva;
+        private System.Windows.Forms.TextBox txtRespuestaNueva;
     }
 }

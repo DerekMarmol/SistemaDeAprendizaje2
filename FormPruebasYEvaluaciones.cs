@@ -44,13 +44,13 @@ namespace SistemaDeAprendizaje
 
             if (EvaluacionCompletada())
             {
-                lblEstado.Text = "Ya has completado esta evaluación.";
-                lblEstado.ForeColor = System.Drawing.Color.Blue;
-                lblPregunta.Visible = false;
+                lblStatus.Text = "Ya has completado esta evaluación.";
+                lblStatus.ForeColor = System.Drawing.Color.Blue;
+                lblCuestionar.Visible = false;
                 txtRespuesta.Visible = false;
                 btnEnviar.Visible = false;
                 btnSiguiente.Visible = false;
-                btnTerminar.Visible = false;
+                btnCulminar.Visible = false;
             }
             else
             {
@@ -110,13 +110,13 @@ namespace SistemaDeAprendizaje
             if (EvaluacionCompletada())
             {
                 MostrarResultadoGuardado();
-                lblEstado.Text = "Ya has completado esta evaluación.";
-                lblEstado.ForeColor = System.Drawing.Color.Blue;
-                lblPregunta.Visible = false;
+                lblStatus.Text = "Ya has completado esta evaluación.";
+                lblStatus.ForeColor = System.Drawing.Color.Blue;
+                lblCuestionar.Visible = false;
                 txtRespuesta.Visible = false;
                 btnEnviar.Visible = false;
                 btnSiguiente.Visible = false;
-                btnTerminar.Visible = false;
+                btnCulminar.Visible = false;
             }
             else
             {
@@ -140,8 +140,8 @@ namespace SistemaDeAprendizaje
                 if (result != null)
                 {
                     double porcentaje = Convert.ToDouble(result);
-                    lblResultado.Text = $"Tu porcentaje de respuestas correctas es: {porcentaje:F2}%";
-                    lblResultado.ForeColor = System.Drawing.Color.Black;
+                    lblResult.Text = $"Tu porcentaje de respuestas correctas es: {porcentaje:F2}%";
+                    lblResult.ForeColor = System.Drawing.Color.Black;
                 }
             }
         }
@@ -151,9 +151,9 @@ namespace SistemaDeAprendizaje
         {
             if (preguntaActual < preguntas.Count)
             {
-                lblPregunta.Text = preguntas[preguntaActual].Texto;
+                lblCuestionar.Text = preguntas[preguntaActual].Texto;
                 txtRespuesta.Clear();
-                lblResultado.Text = "";
+                lblResult.Text = "";
                 btnEnviar.Enabled = true;
                 btnSiguiente.Visible = false;
                 btnTerminar.Visible = true;
@@ -162,12 +162,12 @@ namespace SistemaDeAprendizaje
             }
             else
             {
-                lblPregunta.Text = "¡Examen terminado!";
+                lblCuestionar.Text = "¡Examen terminado!";
                 txtRespuesta.Enabled = false;
                 btnEnviar.Enabled = false;
                 btnSiguiente.Enabled = false;
-                btnTerminar.Enabled = false;
-                lblResultado.Text = "";
+                btnCulminar.Enabled = false;
+                lblResult.Text = "";
                 MostrarPorcentaje();
             }
         }
@@ -175,30 +175,8 @@ namespace SistemaDeAprendizaje
         private void MostrarPorcentaje()
         {
             double porcentaje = ((double)respuestasCorrectas / preguntas.Count) * 100;
-            lblResultado.Text = $"Tu porcentaje de respuestas correctas es: {porcentaje:F2}%";
-            lblResultado.ForeColor = System.Drawing.Color.Black;
-        }
-
-        private void btnEnviar_Click(object sender, EventArgs e)
-        {
-            string respuestaUsuario = txtRespuesta.Text.Trim();
-            if (respuestaUsuario.Equals(preguntas[preguntaActual].RespuestaCorrecta, StringComparison.OrdinalIgnoreCase))
-            {
-                lblResultado.Text = "Correcto!";
-                lblResultado.ForeColor = System.Drawing.Color.Green;
-                respuestasCorrectas++;
-            }
-            else
-            {
-                lblResultado.Text = "Incorrecto!";
-                lblResultado.ForeColor = System.Drawing.Color.Red;
-            }
-
-            GuardarRespuesta(preguntas[preguntaActual].PreguntaID, respuestaUsuario);
-            btnEnviar.Enabled = false;
-            btnSiguiente.Visible = true;
-            btnTerminar.Visible = true;
-            txtRespuesta.Enabled = false;
+            lblResult.Text = $"Tu porcentaje de respuestas correctas es: {porcentaje:F2}%";
+            lblResult.ForeColor = System.Drawing.Color.Black;
         }
 
         private void GuardarRespuesta(int preguntaID, string respuestaUsuario)
@@ -215,53 +193,6 @@ namespace SistemaDeAprendizaje
                 connection.Open();
                 command.ExecuteNonQuery();
             }
-        }
-
-        private void btnSiguiente_Click(object sender, EventArgs e)
-        {
-            preguntaActual++;
-            MostrarPregunta();
-        }
-
-        private void btnTerminar_Click_1(object sender, EventArgs e)
-        {
-            MostrarPorcentaje();
-            GuardarResultado();
-            lblPregunta.Text = "¡Examen terminado!";
-            txtRespuesta.Enabled = false;
-            btnEnviar.Enabled = false;
-            btnSiguiente.Enabled = false;
-            btnTerminar.Enabled = false;
-        }
-
-        private void btnAgregarPregunta_Click_1(object sender, EventArgs e)
-        {
-            string textoPregunta = txtNuevaPregunta.Text.Trim();
-            string respuestaCorrecta = txtNuevaRespuesta.Text.Trim();
-
-            if (string.IsNullOrEmpty(textoPregunta) || string.IsNullOrEmpty(respuestaCorrecta))
-            {
-                MessageBox.Show("Por favor, complete tanto la pregunta como la respuesta correcta.");
-                return;
-            }
-
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                string query = "INSERT INTO Preguntas (CursoID, Texto, RespuestaCorrecta) VALUES (@CursoID, @Texto, @RespuestaCorrecta)";
-                MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue("@CursoID", cursoID);
-                command.Parameters.AddWithValue("@Texto", textoPregunta);
-                command.Parameters.AddWithValue("@RespuestaCorrecta", respuestaCorrecta);
-
-                connection.Open();
-                command.ExecuteNonQuery();
-            }
-
-            CargarPreguntas();
-            MostrarPregunta();
-            txtNuevaPregunta.Clear();
-            txtNuevaRespuesta.Clear();
-            MessageBox.Show("Pregunta agregada con éxito.");
         }
 
         private void GuardarResultado()
@@ -289,7 +220,86 @@ namespace SistemaDeAprendizaje
             public string RespuestaCorrecta { get; set; }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MostrarPorcentaje();
+            GuardarResultado();
+            lblCuestionar.Text = "¡Examen terminado!";
+            txtRespuesta.Enabled = false;
+            btnEnviar.Enabled = false;
+            btnSiguiente.Enabled = false;
+            btnTerminar.Enabled = false;
+        }
+
+        private void btnSiguiente_Click_1(object sender, EventArgs e)
+        {
+            preguntaActual++;
+            MostrarPregunta();
+        }
+
+        private void btnEnviar_Click_1(object sender, EventArgs e)
+        {
+            string respuestaUsuario = txtRespuesta.Text.Trim();
+            if (respuestaUsuario.Equals(preguntas[preguntaActual].RespuestaCorrecta, StringComparison.OrdinalIgnoreCase))
+            {
+                lblResult.Text = "Correcto!";
+                lblResult.ForeColor = System.Drawing.Color.Green;
+                respuestasCorrectas++;
+            }
+            else
+            {
+                lblResult.Text = "Incorrecto!";
+                lblResult.ForeColor = System.Drawing.Color.Red;
+            }
+
+            GuardarRespuesta(preguntas[preguntaActual].PreguntaID, respuestaUsuario);
+            btnEnviar.Enabled = false;
+            btnSiguiente.Visible = true;
+            btnCulminar.Visible = true;
+            txtRespuesta.Enabled = false;
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            string textoPregunta = txtPreguntaNueva.Text.Trim();
+            string respuestaCorrecta = txtRespuestaNueva.Text.Trim();
+
+            if (string.IsNullOrEmpty(textoPregunta) || string.IsNullOrEmpty(respuestaCorrecta))
+            {
+                MessageBox.Show("Por favor, complete tanto la pregunta como la respuesta correcta.");
+                return;
+            }
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                string query = "INSERT INTO Preguntas (CursoID, Texto, RespuestaCorrecta) VALUES (@CursoID, @Texto, @RespuestaCorrecta)";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@CursoID", cursoID);
+                command.Parameters.AddWithValue("@Texto", textoPregunta);
+                command.Parameters.AddWithValue("@RespuestaCorrecta", respuestaCorrecta);
+
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+
+            CargarPreguntas();
+            MostrarPregunta();
+            txtPreguntaNueva.Clear();
+            txtRespuestaNueva.Clear();
+            MessageBox.Show("Pregunta agregada con éxito.");
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

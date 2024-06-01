@@ -133,6 +133,12 @@ namespace SistemaDeAprendizaje
 
                         foreach (var correo in correos)
                         {
+                            string nombreCurso = ObtenerNombreCurso(cursoID);
+                            if (!string.IsNullOrEmpty(nombreCurso))
+                            {
+                                string mensaje = $"Se ha agregado un nuevo material para el curso '{nombreCurso}': {nombre}";
+                                EmailHelper.EnviarCorreo(correo, "Nuevo Material Agregado", mensaje);
+                            }
                             EmailHelper.EnviarCorreo(correo, "Nuevo Material Agregado", "Se ha agregado un nuevo material para el curso: " + cursoID);
                         }
                     }
@@ -259,5 +265,4 @@ namespace SistemaDeAprendizaje
             }
         }
     }
-
 }

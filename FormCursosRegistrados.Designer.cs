@@ -45,6 +45,7 @@
             this.btnVerMateriales.TabIndex = 9;
             this.btnVerMateriales.Text = "Ver Materiales";
             this.btnVerMateriales.UseVisualStyleBackColor = true;
+            this.btnVerMateriales.Click += new System.EventHandler(this.btnVerMateriales_Click_1);
             // 
             // btnEliminar
             // 
@@ -54,6 +55,7 @@
             this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "Eliminar Inscripción";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
             // 
             // label1
             // 
@@ -99,6 +101,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormCursosRegistrados";
             this.Text = "FormCursosRegistrados";
+            this.Load += new System.EventHandler(this.FormCursosRegistrados_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
