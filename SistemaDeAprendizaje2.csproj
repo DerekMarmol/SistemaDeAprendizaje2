@@ -98,6 +98,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAdministrarMateriales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdministrarMateriales.Designer.cs">
+      <DependentUpon>FormAdministrarMateriales.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCatalogoCursos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAdministrarMateriales.resx">
+      <DependentUpon>FormAdministrarMateriales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCatalogoCursos.resx">
       <DependentUpon>FormCatalogoCursos.cs</DependentUpon>
     </EmbeddedResource>
